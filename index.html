@@ -264,6 +264,7 @@
                     <option value="figures_ancient_medieval">👑 Պետական գործիչներ․ Հին դարեր և միջնադար (21)</option>
                     <option value="figures_modern">⚔️ Պետական ու քաղաքական գործիչներ․ Նոր դարեր (21)</option>
                     <option value="epic">🏔️ «Սասնա Ծռեր» Էպոսի հերոսներ (21)</option>
+                    <option value="mythology">⚡ Հայոց դիցարան և առասպելներ (21)</option>
                     <option value="writers">📜 Հայ Գրողներ (21)</option>
                     <option value="culture">🎨 Մշակույթի, Արվեստի գործիչներ (21)</option>
                 </select>
@@ -295,6 +296,7 @@
                     <option value="figures_ancient_medieval">👑 Պետական գործիչներ․ Հին դարեր և միջնադար (21)</option>
                     <option value="figures_modern">⚔️ Պետական ու քաղաքական գործիչներ․ Նոր դարեր (21)</option>
                     <option value="epic">🏔️ «Սասնա Ծռեր» Էպոսի հերոսներ (21)</option>
+                    <option value="mythology">⚡ Հայոց դիցարան և առասպելներ (21)</option>
                     <option value="writers">📜 Հայ Գրողներ (21)</option>
                     <option value="culture">🎨 Մշակույթի, Արվեստի գործիչներ (21)</option>
                 </select>
@@ -394,6 +396,7 @@
         figures_ancient_medieval: "Պետական գործիչներ․ Հին դարեր և միջնադար",
         figures_modern: "Պետական ու քաղաքական գործիչներ․ Նոր դարեր",
         epic: "«Սասնա Ծռեր» Էպոսի հերոսներ",
+        mythology: "Հայոց դիցարան և առասպելներ",
         writers: "Հայ Գրողներ",
         culture: "Մշակույթի, Արվեստի գործիչներ"
     };
@@ -467,6 +470,29 @@
             { name: "Պառավ (Ճակնդեղի արտ)", img: "https://i.postimg.cc/jq1D910G/Parav.jpg" },
             { name: "Կոզբադին", img: "https://i.postimg.cc/NFZLHKk0/Kozbadin.jpg" },
             { name: "Բադին", img: "https://i.postimg.cc/9Mmry555/Badin.jpg" }
+        ],
+        mythology: [
+            { name: "Արամազդ", img: "https://i.postimg.cc/VvbwQ1cM/Aramazd.jpg", fallbackImg: createSvgImg("⚡", "#2980b9") },
+            { name: "Հայկ Նահապետ", img: "https://i.postimg.cc/NGy2fHsK/Hayk-Nahapet.jpg", fallbackImg: createSvgImg("🏹", "#1abc9c") },
+            { name: "Անահիտ", img: "https://i.postimg.cc/cC8WyZNG/Anahit.jpg", fallbackImg: createSvgImg("👑", "#f39c12") },
+            { name: "Արալեզ", img: "https://i.postimg.cc/VsS0LCfj/haralez.jpg", fallbackImg: createSvgImg("🐕", "#e67e22") },
+            { name: "Վահագն", img: "https://i.postimg.cc/jqWnd7xh/Vahagn.jpg", fallbackImg: createSvgImg("🔥", "#c0392b") },
+            { name: "Շամիրամ", img: "https://i.postimg.cc/L4rYq85x/Samiram.jpg", fallbackImg: createSvgImg("👸", "#9b59b6") },
+            { name: "Միհր", img: "https://i.postimg.cc/9X4wF7mz/Mihr.jpg", fallbackImg: createSvgImg("☀️", "#f1c40f") },
+            { name: "Տորք Անգեղ", img: "https://i.postimg.cc/8PMFLgrG/Tork_-Angeg.jpg", fallbackImg: createSvgImg("🪨", "#5d6d7e") },
+            { name: "Աստղիկ", img: "https://i.postimg.cc/xqD29703/astgik.jpg", fallbackImg: createSvgImg("✨", "#e91e63") },
+            { name: "Վիշապ", img: "https://i.postimg.cc/ryv0dws7/Visap.jpg", fallbackImg: createSvgImg("🐲", "#117864") },
+            { name: "Տիր", img: "https://i.postimg.cc/pVgh9LrS/Tir.jpg", fallbackImg: createSvgImg("📜", "#34495e") },
+            { name: "Արա Գեղեցիկ", img: "https://i.postimg.cc/7b8kqcxT/Ara-Gegec_ik.jpg", fallbackImg: createSvgImg("🤴", "#3498db") },
+            { name: "Նանե", img: "https://i.postimg.cc/sfBGDhjx/Nane.jpg", fallbackImg: createSvgImg("🛡️", "#8e44ad") },
+            { name: "Հազարան Բլբուլ", img: "https://i.postimg.cc/Y24LqWrw/Hazaran-Blbul.jpg", fallbackImg: createSvgImg("🐦", "#e74c3c") },
+            { name: "Վանատուր", img: "https://i.postimg.cc/2jPbqSys/Vanatur.jpg", fallbackImg: createSvgImg("🍷", "#16a085") },
+            { name: "Բել", img: "https://i.postimg.cc/Bt90JyqR/Bel.jpg", fallbackImg: createSvgImg("⚔️", "#7f8c8d") },
+            { name: "Սպանդարամետ", img: "https://i.postimg.cc/J7yH4kr5/Spandaramet.jpg", fallbackImg: createSvgImg("🌿", "#27ae60") },
+            { name: "Քաջք", img: "https://i.postimg.cc/ncBsqf95/K_ajk_er.jpg", fallbackImg: createSvgImg("🌪️", "#4a235a") },
+            { name: "Ամանոր", img: "https://i.postimg.cc/6qGKJwN3/Amanor.jpg", fallbackImg: createSvgImg("🍎", "#d35400") },
+            { name: "Աժդահակ", img: "https://i.postimg.cc/B6z3VbRG/Azdahak.jpg", fallbackImg: createSvgImg("🐉", "#922b21") },
+            { name: "Բարշամին", img: "https://i.postimg.cc/7b8kqcxN/Barsamin.jpg", fallbackImg: createSvgImg("🌩️", "#2c3e50") }
         ],
         writers: [
             { name: "Հովհաննես Շիրազ", img: "https://i0.wp.com/gyumri.am/wp-content/uploads/2025/12/200px-Shiraz.jpg?fit=200%2C266&ssl=1" },
@@ -548,6 +574,17 @@
             "Անբնական ուժ ունեցող հսկա կամ դև է՞:",
             "Անունը սկսվում է «Մ» տառո՞վ:",
             "Կապ ունի՞ Սասնա Ծռերից որևէ մեկի ամուսնության հետ:"
+        ],
+        mythology: [
+            "Հայոց դիցարանի աստված կամ դիցուհի՞ է:",
+            "Իգական սեռի կերպա՞ր է (դիցուհի կամ թագուհի):",
+            "Առասպելական արարած կամ ոգի՞ է (ոչ մարդ, ոչ աստված):",
+            "Բացասական կերպար կամ թշնամի՞ է (օրինակ՝ Բել, Աժդահակ, Շամիրամ):",
+            "Կապված է՞ կրակի, արևի, կայծակի կամ ամպրոպի հետ:",
+            "Կապված է՞ բնության, պտղաբերության կամ ջրի տարերքի հետ:",
+            "Հայոց առասպելական թագավոր կամ նախահա՞յր է:",
+            "Արտաքուստ կենդանու կամ թռչունի տեսք ունի՞:",
+            "Գերբնական ֆիզիկական ուժ ունեցող հսկա՞ է:"
         ],
         writers: [
             "20-րդ դարո՞ւմ է ապրել ու ստեղծագործել:", 
@@ -854,7 +891,12 @@
     function renderBoard(catKey) {
         const board = document.getElementById('board');
         board.innerHTML = '';
-        const defaultZoomStyle = (catKey === 'figures_ancient_medieval') ? "transform: scale(1.35); transform-origin: center 12%;" : "";
+        let defaultZoomStyle = "";
+        if (catKey === 'figures_ancient_medieval') {
+            defaultZoomStyle = "transform: scale(1.35); transform-origin: center 12%;";
+        } else if (catKey === 'mythology') {
+            defaultZoomStyle = "transform: scale(1.42); transform-origin: center 12%;";
+        }
 
         categories[catKey].forEach((card, index) => {
             card.id = index + 1;
