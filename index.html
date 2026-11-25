@@ -23,7 +23,7 @@
         
         .box {
             width: 98%; 
-            max-width: 1360px; 
+            max-width: 1480px; 
             margin: 0 auto; 
             background: #2c3e50; 
             padding: 16px 20px; 
@@ -64,7 +64,7 @@
             border-radius: 10px;
             padding: 12px 16px;
             margin: 0 auto 14px auto;
-            max-width: 760px;
+            max-width: 780px;
             text-align: left;
             font-size: 0.9rem;
             line-height: 1.45;
@@ -82,7 +82,7 @@
             justify-content: center;
             align-items: center;
             gap: 12px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-size: 0.95rem;
             color: #bdc3c7;
         }
@@ -96,6 +96,103 @@
         }
         .btn-menu:hover { background: #c0392b; }
 
+        /* SCOREBOARD STYLES */
+        .scoreboard-card {
+            background: #1a2a3a;
+            border: 2px solid #34495e;
+            border-radius: 14px;
+            padding: 10px 16px;
+            margin: 8px auto 12px auto;
+            max-width: 980px;
+        }
+
+        .score-main-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+
+        .score-team-1 { color: #5dade2; }
+        .score-team-2 { color: #f5b041; }
+
+        .score-digits {
+            background: #2c3e50;
+            border: 2px solid #f1c40f;
+            color: #f1c40f;
+            padding: 4px 16px;
+            border-radius: 10px;
+            font-size: 1.35rem;
+            letter-spacing: 2px;
+        }
+
+        .round-pill {
+            background: #8e44ad;
+            color: white;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .categories-tracker {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #2c3e50;
+        }
+
+        .cat-chip {
+            font-size: 0.74rem;
+            padding: 3px 9px;
+            border-radius: 12px;
+            background: #2c3e50;
+            color: #95a5a6;
+            border: 1px solid #34495e;
+        }
+
+        .cat-chip.done {
+            background: rgba(46, 204, 113, 0.16);
+            color: #2ecc71;
+            border-color: #2ecc71;
+        }
+
+        .cat-chip.current {
+            background: rgba(241, 196, 15, 0.18);
+            color: #f1c40f;
+            border-color: #f1c40f;
+            font-weight: bold;
+        }
+
+        /* GRAND TOURNAMENT SUMMARY BOX */
+        .series-summary-box {
+            background: linear-gradient(135deg, #1a2a3a 0%, #243b55 100%);
+            border: 3px solid #f1c40f;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 14px auto;
+            max-width: 780px;
+            box-shadow: 0 8px 25px rgba(241, 196, 15, 0.25);
+        }
+
+        .series-summary-box h2 {
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .series-final-score {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 12px 0;
+            color: #ffffff;
+        }
+
         input, button, select {
             padding: 10px 14px; 
             font-size: 0.95rem; 
@@ -106,7 +203,12 @@
             touch-action: manipulation;
         }
         
-        input[type="text"] { background: #ffffff; color: #333; font-weight: bold; text-align: center; }
+        input[type="text"], input[type="password"] { 
+            background: #ffffff; 
+            color: #333; 
+            font-weight: bold; 
+            text-align: center; 
+        }
         
         button { background: #2ece7e; color: white; font-weight: bold; cursor: pointer; transition: 0.2s transform, 0.2s background; }
         button:hover { background: #27ae60; }
@@ -143,7 +245,7 @@
             justify-content: flex-start;
         }
         .card:hover { transform: scale(1.04); }
-        .card.eliminated { opacity: 0.28; filter: grayscale(100%); transform: none; }
+        .card.eliminated { opacity: 0.24; filter: grayscale(100%); transform: none; }
         .card-img-wrap {
             width: 100%;
             aspect-ratio: 1;
@@ -166,6 +268,133 @@
             text-align: center; 
             line-height: 1.2; 
             word-break: break-word; 
+        }
+
+        /* PLAYER INCOMING QUESTION HIGHLIGHT */
+        .incoming-question-box {
+            background: #2c3e50;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 8px 0 12px 0;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.3rem;
+            line-height: 1.35;
+        }
+
+        /* SPECTATOR / BIG SCREEN STYLES */
+        .spectator-live-feed {
+            background: #1a2a3a;
+            border: 2px solid #3498db;
+            border-radius: 14px;
+            padding: 14px 20px;
+            margin: 10px 0 16px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spec-question-line {
+            font-size: 1.55rem;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.35;
+        }
+
+        .spec-question-text {
+            color: #5dade2;
+        }
+
+        .spec-answer-line {
+            font-size: 1.35rem;
+            font-weight: bold;
+            color: #ecf0f1;
+        }
+
+        .spectator-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .team-panel {
+            background: #1a2a3a;
+            border: 2px solid #34495e;
+            border-radius: 14px;
+            padding: 12px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .team-panel.active-turn {
+            border-color: #f1c40f;
+            box-shadow: 0 0 18px rgba(241, 196, 15, 0.25);
+        }
+
+        .team-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #34495e;
+        }
+
+        .team-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #f1c40f;
+        }
+
+        .team-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+
+        .secret-lock-badge {
+            background: #2c3e50;
+            border: 1px solid #7f8c8d;
+            color: #bdc3c7;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .secret-lock-badge.ready {
+            border-color: #2ecc71;
+            color: #2ecc71;
+        }
+
+        .remaining-badge {
+            background: #2980b9;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .spectator-board {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .spectator-board .card {
+            cursor: default;
+        }
+        .spectator-board .card:hover {
+            transform: none;
+        }
+        .spectator-board .card-title {
+            font-size: 0.72rem;
+            margin-top: 4px;
         }
 
         .controls { background: #1a2a3a; padding: 14px; border-radius: 12px; margin-top: 14px; border: 2px solid #34495e; }
@@ -194,7 +423,7 @@
 
         .chat-box { background: #1a2a3a; padding: 12px; border-radius: 10px; max-height: 150px; overflow-y: auto; text-align: left; margin-top: 15px; font-size: 0.9rem; }
         .chat-msg { margin: 4px 0; }
-        .status { font-size: 1.1rem; font-weight: bold; color: #f1c40f; margin: 8px 0; line-height: 1.3; }
+        .status { font-size: 1.15rem; font-weight: bold; color: #f1c40f; margin: 8px 0; line-height: 1.3; }
 
         .guess-box {
             background: #2c3e50; border: 2px dashed #f1c40f; padding: 12px; border-radius: 10px; margin-top: 12px;
@@ -210,6 +439,10 @@
             background: #1a2a3a; padding: 4px 12px; border-radius: 8px; display: inline-block; margin: 4px 0;
         }
 
+        @media (max-width: 1150px) {
+            .spectator-split { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 950px) {
             .board { grid-template-columns: repeat(5, 1fr); gap: 10px; }
             .box { padding: 14px; }
@@ -218,6 +451,7 @@
 
         @media (max-width: 550px) {
             .board { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .spectator-board { grid-template-columns: repeat(4, 1fr); gap: 6px; }
             .box { width: 100%; padding: 10px; }
             .card { padding: 0; }
             .card-title { font-size: 0.78rem; margin-top: 5px; }
@@ -225,6 +459,11 @@
             .my-card-img-wrap { width: 65px; height: 65px; }
             .my-selection-box { padding: 8px 12px; gap: 10px; }
             .status { font-size: 1rem; }
+            .score-main-row { font-size: 0.95rem; gap: 8px; }
+            .score-digits { font-size: 1.1rem; padding: 3px 10px; }
+            .incoming-question-box { font-size: 1.1rem; padding: 10px; }
+            .spec-question-line { font-size: 1.2rem; }
+            .spec-answer-line { font-size: 1.1rem; }
             .btn-yes, .btn-no { font-size: 1.1rem !important; padding: 10px 15px !important; }
             .rules-box, .setup-rules-line { font-size: 0.82rem; padding: 10px 12px; }
         }
@@ -243,23 +482,27 @@
         <div id="rules-box" class="rules-box hidden">
             <b style="color: #f1c40f;">Ինչպե՞ս խաղալ.</b>
             <ul>
-                <li><b>Սենյակի ստեղծում.</b> Խաղացող 1-ն ընտրում է թեման և ստեղծում սենյակ՝ ստանալով 4-նիշ ID, որով միանում է Խաղացող 2-ը։</li>
-                <li><b>Գաղտնի քարտ.</b> Յուրաքանչյուր խաղացող տախտակից սեղմում է իր մտապահած կերպարի վրա (մրցակիցը չի տեսնում այն)։</li>
+                <li><b>Սենյակի ստեղծում.</b> Թիմ 1-ն ընտրում է առաջին թեման, մուտքագրում թիմի անունը և ստեղծում սենյակ՝ ստանալով 4-նիշ ID, որով միանում է Թիմ 2-ը։</li>
+                <li><b>Գաղտնի քարտ.</b> Յուրաքանչյուր թիմ տախտակից սեղմում է իր մտապահած կերպարի վրա (մրցակիցը և մեծ էկրանը չեն տեսնում այն)։</li>
                 <li><b>Հարց ու պատասխան.</b> Հերթով տվեք հարցեր, որոնց կարելի է պատասխանել միայն <b>«ԱՅՈ»</b> կամ <b>«ՈՉ»</b>։</li>
                 <li><b>Քարտերի բացառում.</b> Պատասխանների հիման վրա սեղմեք անհամապատասխան քարտերի վրա՝ դրանք խամրեցնելու և խաղից դուրս թողնելու համար։</li>
-                <li><b>Հաղթանակ և ոչ-ոքի.</b> Ձեր հերթին կարող եք կատարել վերջնական գուշակում։ Սխալվելու դեպքում հերթն անցնում է մրցակցին։ Եթե առաջինը սկսած խաղացողը ճիշտ է գուշակում, մրցակիցն ունենում է <b>1 վերջին հնարավորություն</b>՝ խաղը ոչ-ոքի ավարտելու համար։</li>
+                <li><b>Միավորների հաշվարկ (6 բնագավառ).</b> Թիմերը նույն սենյակում հերթով խաղում են <b>բոլոր 6 բնագավառները</b>։ Ամեն փուլում հաղթողը ստանում է <b>2 միավոր</b>, պարտվողը՝ <b>0 միավոր</b>, իսկ ոչ-ոքիի դեպքում՝ <b>1-ական միավոր</b>։ Բոլոր 6 փուլերից հետո ամփոփվում է դիմակայության վերջնական հաղթողը։</li>
+                <li><b>Մեծ էկրան (ըստ ցանկության).</b> Հանդիսատեսի կամ սմարթ-գրատախտակի համար կարելի է գաղտնի կոդով միանալ՝ առանց գաղտնի քարտերը բացահայտելու տեսնելու երկու թիմերի դաշտերը և ընթացիկ հաշիվը։</li>
             </ul>
         </div>
 
         <!-- SETUP SCREEN -->
         <div id="setup">
             <div class="setup-rules-line">
-                📜 <b style="color: #f1c40f;">Խաղի կանոնները.</b> Ստեղծեք սենյակ կամ միացեք 4-նիշ ID-ով, ընտրեք գաղտնի քարտ, տվեք «ԱՅՈ/ՈՉ» հարցեր, բացառեք անհամապատասխան քարտերը և առաջինը գուշակեք մրցակցի կերպարին։
+                📜 <b style="color: #f1c40f;">Դիմակայության կարգը.</b> Թիմերը խաղում են բոլոր <b>6 բնագավառները</b> նույն սենյակում։ Հաղթանակը՝ <b>2 միավոր</b>, ոչ-ոքին՝ <b>1-ական միավոր</b>, պարտությունը՝ <b>0 միավոր</b>։ Վերջնական հաղթողը որոշվում է 6 փուլերի հանրագումարով։
             </div>
 
             <div style="background: #1a2a3a; padding: 15px; border-radius: 12px; margin-bottom: 15px;">
-                <h3>Տարբերակ A: Ստեղծել Սենյակ (Խաղացող 1)</h3>
-                <label for="category-select"><b>Ընտրիր թեման.</b> </label><br>
+                <h3>Տարբերակ A: Ստեղծել Սենյակ (Թիմ 1)</h3>
+                <div style="margin: 8px 0;">
+                    <input type="text" id="host-team-name" maxlength="25" placeholder="Թիմ 1-ի անունը (ըստ ցանկության)" style="width: 90%; max-width: 340px;">
+                </div>
+                <label for="category-select"><b>Ընտրիր 1-ին փուլի թեման.</b> </label><br>
                 <select id="category-select" style="width: 90%; max-width: 420px;">
                     <option value="figures_ancient_medieval">👑 Պետական գործիչներ․ Հին դարեր և միջնադար (21)</option>
                     <option value="figures_modern">⚔️ Պետական ու քաղաքական գործիչներ․ Նոր դարեր (21)</option>
@@ -272,36 +515,61 @@
                 <button onclick="createRoom()" style="font-size: 1rem; padding: 10px 20px; margin-top: 8px;">➕ Ստեղծել Նոր Սենյակ</button>
             </div>
 
-            <div style="background: #1a2a3a; padding: 15px; border-radius: 12px;">
-                <h3>Տարբերակ B: Միանալ Սենյակին (Խաղացող 2)</h3>
+            <div style="background: #1a2a3a; padding: 15px; border-radius: 12px; margin-bottom: 15px;">
+                <h3>Տարբերակ B: Միանալ Սենյակին (Թիմ 2)</h3>
                 <div class="flex-row">
+                    <input type="text" id="peer-team-name" maxlength="25" placeholder="Թիմ 2-ի անունը (ըստ ցանկության)" style="width: 240px;">
                     <input type="text" id="join-room-code" maxlength="4" placeholder="4-նիշ ID" style="width: 120px; font-size: 1.1rem;">
                     <button onclick="joinRoom()" style="font-size: 1rem; padding: 10px 20px; background: #3498db;">🔗 Միանալ</button>
                 </div>
             </div>
+
+            <div style="background: #1a2a3a; padding: 15px; border-radius: 12px; border: 1px dashed #9b59b6;">
+                <h3 style="color: #d2b4de;">Տարբերակ C: Միանալ Մեծ Էկրանով (Հանդիսատես / Ըստ ցանկության)</h3>
+                <p style="font-size: 0.85rem; color: #bdc3c7; margin: 4px 0 8px 0;">
+                    Մուտքագրեք սենյակի գաղտնի կոդը՝ հաշիվը, երկու թիմերի դաշտերը և հարցերը ցուցադրելու համար։
+                </p>
+                <div class="flex-row">
+                    <input type="password" inputmode="numeric" id="spectator-room-code" maxlength="4" placeholder="••••" autocomplete="off" style="width: 120px; font-size: 1.1rem; letter-spacing: 3px;">
+                    <button onclick="joinSpectator()" style="font-size: 1rem; padding: 10px 20px; background: #9b59b6;">📺 Բացել Մեծ Էկրանը</button>
+                </div>
+            </div>
         </div>
 
-        <!-- GAMEPLAY SCREEN -->
+        <!-- PLAYER GAMEPLAY SCREEN -->
         <div id="game" class="hidden">
             
             <div class="game-top-bar">
                 <div>Սենյակի ID: <span id="display-room-code" class="room-code-badge">....</span></div>
+                <div style="color: #f1c40f; font-weight: bold;" id="my-team-badge"></div>
                 <button class="btn-menu" onclick="returnToMainMenu()">🏠 Գլխավոր մենյու</button>
             </div>
 
-            <!-- RESTART GAME PANEL -->
+            <!-- LIVE SCOREBOARD (PLAYER VIEW) -->
+            <div class="scoreboard-card">
+                <div class="score-main-row">
+                    <span class="score-team-1" id="player-sb-host">🔵 Թիմ 1</span>
+                    <span class="score-digits" id="player-sb-score">0 : 0</span>
+                    <span class="score-team-2" id="player-sb-peer">🟠 Թիմ 2</span>
+                    <span class="round-pill" id="player-sb-round">Փուլ 1 / 6</span>
+                </div>
+                <div class="categories-tracker" id="player-cat-tracker"></div>
+            </div>
+
+            <!-- GRAND SERIES SUMMARY (AFTER ALL 6 CATEGORIES) -->
+            <div id="series-summary-box" class="series-summary-box hidden">
+                <h2>🏆 ԴԻՄԱԿԱՅՈՒԹՅԱՆ ՎԵՐՋՆԱԿԱՆ ԱՄՓՈՓՈՒՄ (6 / 6)</h2>
+                <div class="series-final-score" id="series-final-score-text"></div>
+                <div style="font-size: 1.25rem; font-weight: bold; color: #2ecc71; margin-bottom: 14px;" id="series-winner-announcement"></div>
+                <button onclick="resetFullSeries()" style="background: #2980b9; font-size: 1.05rem; padding: 10px 24px;">🔄 Սկսել Նոր 6-Փուլանոց Դիմակայություն</button>
+            </div>
+
+            <!-- NEXT ROUND PANEL (WHEN CATEGORIES REMAIN) -->
             <div id="restart-box" class="restart-box hidden">
-                <h3 style="margin-bottom: 8px; font-size: 1.1rem;">🔄 Ցանկանո՞ւմ եք նորից խաղալ նույն սենյակում։</h3>
-                <select id="restart-category-select" style="background: #2c3e50; color: white; width: 90%; max-width: 420px;">
-                    <option value="figures_ancient_medieval">👑 Պետական գործիչներ․ Հին դարեր և միջնադար (21)</option>
-                    <option value="figures_modern">⚔️ Պետական ու քաղաքական գործիչներ․ Նոր դարեր (21)</option>
-                    <option value="epic">🏔️ «Սասնա Ծռեր» Էպոսի հերոսներ (21)</option>
-                    <option value="mythology">⚡ Հայոց դիցարան և առասպելներ (21)</option>
-                    <option value="writers">📜 Հայ Գրողներ (21)</option>
-                    <option value="culture">🎨 Մշակույթի, Արվեստի գործիչներ (21)</option>
-                </select>
+                <h3 style="margin-bottom: 8px; font-size: 1.1rem;" id="next-round-heading">➡️ Ընտրեք հաջորդ բնագավառը՝ դիմակայությունը շարունակելու համար.</h3>
+                <select id="restart-category-select" style="background: #2c3e50; color: white; width: 90%; max-width: 440px;"></select>
                 <br>
-                <button onclick="restartGame()" style="background: #2980b9; font-size: 1.1rem; padding: 10px 25px; margin-top: 8px;">🔄 Վերսկսել Խաղը</button>
+                <button onclick="startNextRound()" style="background: #2980b9; font-size: 1.1rem; padding: 10px 25px; margin-top: 8px;">▶️ Անցնել Հաջորդ Փուլին</button>
             </div>
 
             <!-- PINNED SELECTED CARD -->
@@ -324,12 +592,12 @@
             <div id="controls" class="controls hidden">
                 <!-- QUESTION SECTION -->
                 <div style="margin-bottom: 12px;">
-                    <h4 style="margin: 4px 0; color: #3498db; font-size: 1rem;">❓ Տուր հարց ընկերոջդ.</h4>
-                    <select id="quick-questions" onchange="applyQuickQuestion()" style="width: 95%; max-width: 400px; background: #2c3e50; color: white;">
+                    <h4 style="margin: 4px 0; color: #3498db; font-size: 1.05rem;">❓ Տուր հարց ընկերոջդ.</h4>
+                    <select id="quick-questions" onchange="applyQuickQuestion()" style="width: 95%; max-width: 440px; background: #2c3e50; color: white; font-size: 1rem;">
                         <option value="">-- Ընտրիր պատրաստի հարց կամ գրիր ինքդ --</option>
                     </select>
                     <div class="flex-row" style="margin-top: 6px;">
-                        <input type="text" id="question-input" placeholder="Գրիր հարցդ այստեղ..." style="flex: 1; min-width: 160px;" disabled>
+                        <input type="text" id="question-input" placeholder="Գրիր հարցդ այստեղ..." style="flex: 1; min-width: 180px; font-size: 1.05rem;" disabled>
                         <button id="send-btn" onclick="sendQuestion()" disabled>Ուղարկել</button>
                     </div>
                 </div>
@@ -349,8 +617,8 @@
 
                 <!-- REPLY SECTION -->
                 <div>
-                    <h4 style="margin: 4px 0; color: #f1c40f; font-size: 1rem;">👉 Պատասխանիր ստացված հարցին.</h4>
-                    <div id="incoming-question" style="color:#f1c40f; font-weight:bold; font-size:1.1rem; margin: 8px 0;">
+                    <h4 style="margin: 4px 0; color: #f1c40f; font-size: 1.05rem;">👉 Պատասխանիր ստացված հարցին.</h4>
+                    <div id="incoming-question" class="incoming-question-box">
                         (Դեռ հարց չկա)
                     </div>
                     <div class="reply-box">
@@ -361,6 +629,70 @@
             </div>
 
             <div class="chat-box" id="chat"></div>
+        </div>
+
+        <!-- BIG SCREEN / SPECTATOR VIEW (NO ROOM CODE SHOWN) -->
+        <div id="spectator-screen" class="hidden">
+            <div class="game-top-bar">
+                <div style="font-size: 1.1rem; font-weight: bold; color: #ecf0f1;">📺 ՈՒՂԻՂ ՀԵՌԱՐՁԱԿՈՒՄ</div>
+                <div style="color: #f1c40f; font-weight: bold; font-size: 1.05rem;" id="spec-category-title">-</div>
+                <button class="btn-menu" onclick="returnToMainMenu()">🏠 Գլխավոր մենյու</button>
+            </div>
+
+            <!-- LIVE SCOREBOARD (BIG SCREEN VIEW) -->
+            <div class="scoreboard-card">
+                <div class="score-main-row">
+                    <span class="score-team-1" id="spec-sb-host">🔵 Թիմ 1</span>
+                    <span class="score-digits" id="spec-sb-score">0 : 0</span>
+                    <span class="score-team-2" id="spec-sb-peer">🟠 Թիմ 2</span>
+                    <span class="round-pill" id="spec-sb-round">Փուլ 1 / 6</span>
+                </div>
+                <div class="categories-tracker" id="spec-cat-tracker"></div>
+            </div>
+
+            <!-- SPECTATOR GRAND SUMMARY BANNER -->
+            <div id="spec-series-summary" class="series-summary-box hidden">
+                <h2>🏆 ԴԻՄԱԿԱՅՈՒԹՅԱՆ ՎԵՐՋՆԱԿԱՆ ԱՄՓՈՓՈՒՄ (6 / 6)</h2>
+                <div class="series-final-score" id="spec-series-score-text"></div>
+                <div style="font-size: 1.35rem; font-weight: bold; color: #2ecc71;" id="spec-series-winner-text"></div>
+            </div>
+
+            <div class="status" id="spec-status-text" style="font-size: 1.25rem;">Սպասում ենք թիմերի մեկնարկին...</div>
+
+            <div class="spectator-live-feed">
+                <div class="spec-question-line">
+                    ❓ <span>Հարց․</span> <span id="spec-last-question" class="spec-question-text">(Դեռ հարց չկա)</span>
+                </div>
+                <div class="spec-answer-line">
+                    💬 <span>Պատասխան․</span> <span id="spec-last-answer" style="color: #bdc3c7;">—</span>
+                </div>
+            </div>
+
+            <div class="spectator-split">
+                <!-- TEAM 1 / HOST BOARD -->
+                <div class="team-panel" id="spec-panel-host">
+                    <div class="team-header">
+                        <div class="team-title" id="spec-title-host">🔵 Թիմ 1</div>
+                        <div class="team-meta">
+                            <span id="spec-secret-host" class="secret-lock-badge">⏳ Ընտրում է...</span>
+                            <span id="spec-count-host" class="remaining-badge">Մնացել է՝ 21 / 21</span>
+                        </div>
+                    </div>
+                    <div class="spectator-board" id="spec-board-host"></div>
+                </div>
+
+                <!-- TEAM 2 / PEER BOARD -->
+                <div class="team-panel" id="spec-panel-peer">
+                    <div class="team-header">
+                        <div class="team-title" id="spec-title-peer">🟠 Թիմ 2</div>
+                        <div class="team-meta">
+                            <span id="spec-secret-peer" class="secret-lock-badge">⏳ Ընտրում է...</span>
+                            <span id="spec-count-peer" class="remaining-badge">Մնացել է՝ 21 / 21</span>
+                        </div>
+                    </div>
+                    <div class="spectator-board" id="spec-board-peer"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -391,6 +723,24 @@
         </svg>`;
         return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
     }
+
+    const categoryOrder = [
+        'figures_ancient_medieval',
+        'figures_modern',
+        'epic',
+        'mythology',
+        'writers',
+        'culture'
+    ];
+
+    const categoryShortNames = {
+        figures_ancient_medieval: "👑 Հին և միջնադար",
+        figures_modern: "⚔️ Նոր դարեր",
+        epic: "🏔️ Սասնա Ծռեր",
+        mythology: "⚡ Դիցարան",
+        writers: "📜 Գրողներ",
+        culture: "🎨 Մշակույթ"
+    };
 
     const categoryNames = {
         figures_ancient_medieval: "Պետական գործիչներ․ Հին դարեր և միջնադար",
@@ -644,13 +994,91 @@
     }
 
     let roomRef = null;
-    let myRole = null; 
+    let myRole = null; // 'host', 'peer', or 'spectator'
     let mySecret = null;
     let selectedCategory = 'figures_ancient_medieval';
+    let spectatorCategory = null;
     let lastQuestionTimestamp = 0;
     let lastAnswerTimestamp = 0;
     let gameOver = false;
     let oneCardLeftLogged = false;
+    let currentTeamNames = { host: "Թիմ 1", peer: "Թիմ 2" };
+    let latestRoomData = null;
+
+    function getTeamLabel(role, namesObj) {
+        const names = namesObj || currentTeamNames;
+        if (role === 'host') return names.host || "Թիմ 1";
+        if (role === 'peer') return names.peer || "Թիմ 2";
+        return "";
+    }
+
+    function updateScoreboardUI(prefix, data) {
+        const hostName = getTeamLabel('host', data.teamNames);
+        const peerName = getTeamLabel('peer', data.teamNames);
+        const scores = data.scores || { host: 0, peer: 0 };
+        const played = Array.isArray(data.playedCategories) ? data.playedCategories : [];
+        const currentCat = data.category || selectedCategory;
+        const roundNum = Math.min(6, played.length + (data.winner ? 0 : 1));
+
+        document.getElementById(prefix + '-sb-host').innerText = `🔵 ${hostName}`;
+        document.getElementById(prefix + '-sb-peer').innerText = `🟠 ${peerName}`;
+        document.getElementById(prefix + '-sb-score').innerText = `${scores.host || 0} : ${scores.peer || 0}`;
+        document.getElementById(prefix + '-sb-round').innerText = data.seriesComplete
+            ? "Ավարտված է (6 / 6)"
+            : `Փուլ ${roundNum} / 6`;
+
+        const tracker = document.getElementById(prefix + '-cat-tracker');
+        tracker.innerHTML = '';
+        categoryOrder.forEach(catKey => {
+            const chip = document.createElement('span');
+            const isDone = played.includes(catKey);
+            const isCurrent = (catKey === currentCat && !isDone);
+            chip.className = 'cat-chip' + (isDone ? ' done' : (isCurrent ? ' current' : ''));
+            chip.innerText = (isDone ? '✅ ' : (isCurrent ? '▶️ ' : '')) + categoryShortNames[catKey];
+            tracker.appendChild(chip);
+        });
+    }
+
+    function populateNextRoundDropdown(playedCategories) {
+        const select = document.getElementById('restart-category-select');
+        const playedSet = new Set(Array.isArray(playedCategories) ? playedCategories : []);
+        select.innerHTML = '';
+
+        categoryOrder.forEach(catKey => {
+            const isDone = playedSet.has(catKey);
+            const opt = document.createElement('option');
+            opt.value = catKey;
+            opt.disabled = isDone;
+            opt.innerText = isDone
+                ? `✅ ${categoryNames[catKey]} (Խաղացված է)`
+                : `${categoryNames[catKey]} (21)`;
+            select.appendChild(opt);
+        });
+
+        const firstAvailable = categoryOrder.find(k => !playedSet.has(k));
+        if (firstAvailable) {
+            select.value = firstAvailable;
+        }
+    }
+
+    function getSeriesSummaryStrings(data) {
+        const hostName = getTeamLabel('host', data.teamNames);
+        const peerName = getTeamLabel('peer', data.teamNames);
+        const scores = data.scores || { host: 0, peer: 0 };
+        const hScore = scores.host || 0;
+        const pScore = scores.peer || 0;
+
+        const scoreLine = `🔵 ${hostName}  [ ${hScore} : ${pScore} ]  🟠 ${peerName}`;
+        let winnerLine = "";
+        if (hScore > pScore) {
+            winnerLine = `🥇 Դիմակայության հաղթողն է «${hostName}»-ը։`;
+        } else if (pScore > hScore) {
+            winnerLine = `🥇 Դիմակայության հաղթողն է «${peerName}»-ը։`;
+        } else {
+            winnerLine = `🤝 Դիմակայությունն ավարտվեց մարտական ՈՉ-ՈՔԻ հաշվով։`;
+        }
+        return { scoreLine, winnerLine };
+    }
 
     function populateQuickQuestions(catKey) {
         const select = document.getElementById('quick-questions');
@@ -673,7 +1101,9 @@
     function createRoom() {
         const randomCode = Math.floor(1000 + Math.random() * 9000).toString();
         selectedCategory = document.getElementById('category-select').value;
+        const hostName = document.getElementById('host-team-name').value.trim() || "Թիմ 1";
         myRole = 'host';
+        currentTeamNames = { host: hostName, peer: "Թիմ 2" };
 
         roomRef = db.ref('rooms/' + randomCode);
         roomRef.set({
@@ -682,17 +1112,23 @@
             currentTurn: 'host',
             firstAsker: 'host',
             turnStage: 'asking',
+            teamNames: currentTeamNames,
+            scores: { host: 0, peer: 0 },
+            playedCategories: [],
+            roundNumber: 1,
+            seriesComplete: false,
             createdAt: Date.now()
         });
 
         startRoomSession(randomCode);
-        log("👑 Ստեղծվեց սենյակ: " + randomCode + " (Սպասեք Խաղացող 2-ին)");
+        log(`👑 Ստեղծվեց սենյակ: ${randomCode} | ${hostName} (Սպասեք Թիմ 2-ին)`);
     }
 
     function joinRoom() {
         const code = document.getElementById('join-room-code').value.trim();
         if (code.length !== 4) return alert("Խնդրում ենք մուտքագրել 4-նիշ ID!");
 
+        const peerName = document.getElementById('peer-team-name').value.trim() || "Թիմ 2";
         myRole = 'peer';
         roomRef = db.ref('rooms/' + code);
 
@@ -708,14 +1144,222 @@
                 return;
             }
 
-            roomRef.update({ status: 'connected' });
+            const existingHostName = (data.teamNames && data.teamNames.host) ? data.teamNames.host : "Թիմ 1";
+            currentTeamNames = { host: existingHostName, peer: peerName };
+
+            roomRef.update({ 
+                status: 'connected',
+                'teamNames/peer': peerName
+            });
             startRoomSession(code);
-            log("🔗 Միացաք սենյակին: " + code);
+            log(`🔗 ${peerName}-ը միացավ սենյակին (${code})`);
         });
     }
 
+    // BIG SCREEN / SPECTATOR CONNECTION (HIDDEN CODE)
+    function joinSpectator() {
+        const codeInput = document.getElementById('spectator-room-code');
+        const code = codeInput.value.trim();
+        if (code.length !== 4) return alert("Խնդրում ենք մուտքագրել սենյակի 4-նիշ կոդը!");
+
+        roomRef = db.ref('rooms/' + code);
+        roomRef.once('value', snapshot => {
+            if (!snapshot.exists()) {
+                alert("Այս կոդով սենյակ չի գտնվել!");
+                roomRef = null;
+                return;
+            }
+
+            codeInput.value = "";
+            myRole = 'spectator';
+            spectatorCategory = null;
+            document.getElementById('setup').classList.add('hidden');
+            document.getElementById('game').classList.add('hidden');
+            document.getElementById('spectator-screen').classList.remove('hidden');
+
+            startSpectatorSession();
+        });
+    }
+
+    function startSpectatorSession() {
+        roomRef.off();
+        roomRef.on('value', snapshot => {
+            const data = snapshot.val();
+            if (!data) return;
+
+            updateScoreboardUI('spec', data);
+
+            const catKey = categories[data.category] ? data.category : 'figures_ancient_medieval';
+            document.getElementById('spec-category-title').innerText = categoryNames[catKey] || '';
+
+            const hostLabel = (data.teamNames && data.teamNames.host) ? data.teamNames.host : "Թիմ 1";
+            const peerLabel = (data.teamNames && data.teamNames.peer) ? data.teamNames.peer : "Թիմ 2";
+            document.getElementById('spec-title-host').innerText = `🔵 ${hostLabel}`;
+            document.getElementById('spec-title-peer').innerText = `🟠 ${peerLabel}`;
+
+            if (spectatorCategory !== catKey) {
+                spectatorCategory = catKey;
+                renderSpectatorBoard('host', catKey);
+                renderSpectatorBoard('peer', catKey);
+            }
+
+            // Secret card status (ALWAYS HIDDEN IDENTITY)
+            const hasHostSecret = Boolean(data.secretCards && data.secretCards.host);
+            const hasPeerSecret = Boolean(data.secretCards && data.secretCards.peer);
+
+            const hostSecretBadge = document.getElementById('spec-secret-host');
+            hostSecretBadge.innerText = hasHostSecret ? "🔒 Գաղտնի քարտը ընտրված է" : "⏳ Ընտրում է քարտը...";
+            hostSecretBadge.classList.toggle('ready', hasHostSecret);
+
+            const peerSecretBadge = document.getElementById('spec-secret-peer');
+            peerSecretBadge.innerText = hasPeerSecret ? "🔒 Գաղտնի քարտը ընտրված է" : "⏳ Ընտրում է քարտը...";
+            peerSecretBadge.classList.toggle('ready', hasPeerSecret);
+
+            // Sync eliminated cards for both teams
+            const hostEliminated = (data.eliminated && data.eliminated.host) ? data.eliminated.host : [];
+            const peerEliminated = (data.eliminated && data.eliminated.peer) ? data.eliminated.peer : [];
+
+            syncSpectatorEliminations('host', hostEliminated, categories[catKey].length);
+            syncSpectatorEliminations('peer', peerEliminated, categories[catKey].length);
+
+            // Latest question & answer (ONLY show answer if it belongs to the current question)
+            const qEl = document.getElementById('spec-last-question');
+            const aEl = document.getElementById('spec-last-answer');
+
+            if (data.lastQuestion && data.lastQuestion.text) {
+                const askerName = data.lastQuestion.sender === 'host' ? hostLabel : peerLabel;
+                qEl.innerText = `[${askerName}] ${data.lastQuestion.text}`;
+
+                if (data.lastAnswer && data.lastAnswer.timestamp > data.lastQuestion.timestamp) {
+                    aEl.innerText = data.lastAnswer.text;
+                    aEl.style.color = data.lastAnswer.text === 'ԱՅՈ' ? '#2ecc71' : '#e74c3c';
+                } else {
+                    aEl.innerText = "⏳ Սպասում ենք պատասխանին...";
+                    aEl.style.color = "#f1c40f";
+                }
+            } else {
+                qEl.innerText = "(Դեռ հարց չկա)";
+                aEl.innerText = "—";
+                aEl.style.color = "#bdc3c7";
+            }
+
+            // Highlight active turn panel & update status
+            const hostPanel = document.getElementById('spec-panel-host');
+            const peerPanel = document.getElementById('spec-panel-peer');
+            hostPanel.classList.remove('active-turn');
+            peerPanel.classList.remove('active-turn');
+
+            // Grand series summary on big screen
+            const specSummaryBox = document.getElementById('spec-series-summary');
+            if (data.seriesComplete) {
+                const summary = getSeriesSummaryStrings(data);
+                document.getElementById('spec-series-score-text').innerText = summary.scoreLine;
+                document.getElementById('spec-series-winner-text').innerText = summary.winnerLine;
+                specSummaryBox.classList.remove('hidden');
+            } else {
+                specSummaryBox.classList.add('hidden');
+            }
+
+            if (data.winner) {
+                if (data.winner === 'draw') {
+                    document.getElementById('spec-status-text').innerText = `🤝 ՓՈՒԼՆ ԱՎԱՐՏՎԵՑ ՈՉ-ՈՔԻ (+1 միավոր) — ${data.winReason}`;
+                } else if (data.winner === 'host') {
+                    document.getElementById('spec-status-text').innerText = `🏆 ՓՈՒԼՈՒՄ ՀԱՂԹԵՑ «${hostLabel}»-Ը (+2 միավոր) — ${data.winReason}`;
+                    hostPanel.classList.add('active-turn');
+                } else {
+                    document.getElementById('spec-status-text').innerText = `🏆 ՓՈՒԼՈՒՄ ՀԱՂԹԵՑ «${peerLabel}»-Ը (+2 միավոր) — ${data.winReason}`;
+                    peerPanel.classList.add('active-turn');
+                }
+                return;
+            }
+
+            if (!hasHostSecret || !hasPeerSecret) {
+                document.getElementById('spec-status-text').innerText = "⏳ Թիմերը ընտրում են իրենց գաղտնի քարտերը...";
+                return;
+            }
+
+            const currentTurn = data.currentTurn || 'host';
+            const turnStage = data.turnStage || 'asking';
+            const activeTeamLabel = currentTurn === 'host' ? hostLabel : peerLabel;
+
+            if (currentTurn === 'host') hostPanel.classList.add('active-turn');
+            else peerPanel.classList.add('active-turn');
+
+            if (turnStage === 'final_guess') {
+                document.getElementById('spec-status-text').innerText = `🚨 «${activeTeamLabel}»-ի վերջին հնարավորությունը՝ ոչ-ոքիի հասնելու համար`;
+            } else if (turnStage === 'asking') {
+                document.getElementById('spec-status-text').innerText = `🎯 «${activeTeamLabel}»-ի հերթն է (հարց է տալիս կամ գուշակում)`;
+            } else {
+                document.getElementById('spec-status-text').innerText = `👉 «${activeTeamLabel}»-ը պատասխանում է հարցին`;
+            }
+        });
+    }
+
+    function renderSpectatorBoard(roleKey, catKey) {
+        const boardEl = document.getElementById('spec-board-' + roleKey);
+        boardEl.innerHTML = '';
+
+        let defaultZoomStyle = "";
+        if (catKey === 'figures_ancient_medieval') {
+            defaultZoomStyle = "transform: scale(1.35); transform-origin: center 12%;";
+        } else if (catKey === 'mythology') {
+            defaultZoomStyle = "transform: scale(1.42); transform-origin: center 12%;";
+        }
+
+        categories[catKey].forEach((card, index) => {
+            const cardId = index + 1;
+            if (!card.fallbackImg) card.fallbackImg = card.img;
+            const appliedStyle = card.imgStyle || defaultZoomStyle;
+
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.dataset.cardId = cardId;
+
+            const imgWrap = document.createElement('div');
+            imgWrap.className = 'card-img-wrap';
+
+            const img = document.createElement('img');
+            img.src = card.img;
+            img.alt = card.name;
+            if (appliedStyle) img.style.cssText = appliedStyle;
+            img.onerror = function() { this.onerror = null; this.style.cssText = ''; this.src = card.fallbackImg; };
+
+            imgWrap.appendChild(img);
+
+            const title = document.createElement('div');
+            title.className = 'card-title';
+            title.innerText = card.name;
+
+            div.appendChild(imgWrap);
+            div.appendChild(title);
+            boardEl.appendChild(div);
+
+            if (card.wikiUrl) {
+                loadWikiImage(card, img);
+            }
+        });
+    }
+
+    function syncSpectatorEliminations(roleKey, eliminatedIds, totalCount) {
+        const boardEl = document.getElementById('spec-board-' + roleKey);
+        const cards = boardEl.querySelectorAll('.card');
+        const eliminatedSet = new Set(eliminatedIds.map(Number));
+
+        cards.forEach(c => {
+            const id = Number(c.dataset.cardId);
+            if (eliminatedSet.has(id)) {
+                c.classList.add('eliminated');
+            } else {
+                c.classList.remove('eliminated');
+            }
+        });
+
+        const remaining = Math.max(0, totalCount - eliminatedSet.size);
+        document.getElementById('spec-count-' + roleKey).innerText = `Մնացել է՝ ${remaining} / ${totalCount}`;
+    }
+
     function returnToMainMenu() {
-        if (!gameOver && !confirm("Վստա՞հ եք, որ ուզում եք դուրս գալ սենյակից և վերադառնալ գլխավոր մենյու:")) {
+        if (myRole !== 'spectator' && !gameOver && !confirm("Վստա՞հ եք, որ ուզում եք դուրս գալ սենյակից և վերադառնալ գլխավոր մենյու:")) {
             return;
         }
 
@@ -726,56 +1370,87 @@
 
         myRole = null;
         mySecret = null;
+        spectatorCategory = null;
+        latestRoomData = null;
         gameOver = false;
         oneCardLeftLogged = false;
         lastQuestionTimestamp = 0;
         lastAnswerTimestamp = 0;
 
         document.getElementById('game').classList.add('hidden');
+        document.getElementById('spectator-screen').classList.add('hidden');
         document.getElementById('setup').classList.remove('hidden');
         document.getElementById('my-card-header').classList.add('hidden');
         document.getElementById('controls').classList.add('hidden');
         document.getElementById('restart-box').classList.add('hidden');
+        document.getElementById('series-summary-box').classList.add('hidden');
         document.getElementById('incoming-question').innerText = "(Դեռ հարց չկա)";
         document.getElementById('chat').innerHTML = "";
         document.getElementById('join-room-code').value = "";
+        document.getElementById('spectator-room-code').value = "";
         document.getElementById('status-text').innerText = "Ընտրիր քո գաղտնի քարտը ցուցակից...";
     }
 
     function startRoomSession(code) {
         document.getElementById('display-room-code').innerText = code;
+        document.getElementById('my-team-badge').innerText = `🏷️ ${getTeamLabel(myRole)}`;
         document.getElementById('setup').classList.add('hidden');
+        document.getElementById('spectator-screen').classList.add('hidden');
         document.getElementById('game').classList.remove('hidden');
 
         roomRef.off();
         roomRef.on('value', snapshot => {
             const data = snapshot.val();
             if (!data) return;
+            latestRoomData = data;
+
+            if (data.teamNames) {
+                currentTeamNames = {
+                    host: data.teamNames.host || "Թիմ 1",
+                    peer: data.teamNames.peer || "Թիմ 2"
+                };
+                document.getElementById('my-team-badge').innerText = `🏷️ ${getTeamLabel(myRole)}`;
+            }
+
+            updateScoreboardUI('player', data);
 
             if (!data.winner && gameOver) {
-                resetClientState(data.category);
+                resetClientState(data.category, data.roundNumber || 1);
             }
 
             if (data.winner) {
                 gameOver = true;
-                document.getElementById('restart-box').classList.remove('hidden');
-                document.getElementById('restart-category-select').value = data.category || selectedCategory;
+                const played = Array.isArray(data.playedCategories) ? data.playedCategories : [];
+
+                if (data.seriesComplete || played.length >= categoryOrder.length) {
+                    document.getElementById('restart-box').classList.add('hidden');
+                    const summary = getSeriesSummaryStrings(data);
+                    document.getElementById('series-final-score-text').innerText = summary.scoreLine;
+                    document.getElementById('series-winner-announcement').innerText = summary.winnerLine;
+                    document.getElementById('series-summary-box').classList.remove('hidden');
+                } else {
+                    document.getElementById('series-summary-box').classList.add('hidden');
+                    populateNextRoundDropdown(played);
+                    document.getElementById('restart-box').classList.remove('hidden');
+                }
 
                 if (data.winner === 'draw') {
-                    document.getElementById('status-text').innerText = `🤝 ՈՉ-ՈՔԻ! (${data.winReason})`;
-                    log(`🤝 Խաղն ավարտվեց ոչ-ոքի։ ${data.winReason}`);
+                    document.getElementById('status-text').innerText = `🤝 ՓՈՒԼՆ ԱՎԱՐՏՎԵՑ ՈՉ-ՈՔԻ (+1 միավոր) — ${data.winReason}`;
+                    log(`🤝 Փուլն ավարտվեց ոչ-ոքի (+1 միավոր)։ ${data.winReason}`);
                 } else if (data.winner === myRole) {
-                    document.getElementById('status-text').innerText = `🎉 ԴՈՒ ՀԱՂԹԵՑԻՐ! (${data.winReason})`;
-                    log(`🏆 Դուք հաղթեցիք։ ${data.winReason}`);
+                    document.getElementById('status-text').innerText = `🎉 ԴՈՒՔ ՀԱՂԹԵՑԻՔ ՓՈՒԼԸ (+2 միավոր) — ${data.winReason}`;
+                    log(`🏆 Ձեր թիմը հաղթեց փուլը (+2 միավոր)։ ${data.winReason}`);
                 } else {
-                    document.getElementById('status-text').innerText = `❌ ԴՈՒ ՊԱՐՏՎԵՑԻՐ! Մրցակիցը հաղթեց (${data.winReason})`;
-                    log(`❌ Մրցակիցը հաղթեց։ ${data.winReason}`);
+                    const winnerTeamName = getTeamLabel(data.winner);
+                    document.getElementById('status-text').innerText = `❌ Փուլում հաղթեց «${winnerTeamName}»-ը (+2 միավոր) — ${data.winReason}`;
+                    log(`❌ Փուլում հաղթեց «${winnerTeamName}»-ը (+2 միավոր)։ ${data.winReason}`);
                 }
                 enableAsking(false);
                 enableAnswering(false);
                 return;
             } else {
                 document.getElementById('restart-box').classList.add('hidden');
+                document.getElementById('series-summary-box').classList.add('hidden');
             }
 
             if (data.category && data.category !== selectedCategory && categories[data.category]) {
@@ -787,15 +1462,17 @@
             if (data.lastQuestion && data.lastQuestion.timestamp > lastQuestionTimestamp) {
                 lastQuestionTimestamp = data.lastQuestion.timestamp;
                 if (data.lastQuestion.sender !== myRole) {
-                    log("❓ Հարց. " + data.lastQuestion.text);
-                    document.getElementById('incoming-question').innerText = `❓ Հարց: "${data.lastQuestion.text}"`;
+                    const senderName = getTeamLabel(data.lastQuestion.sender);
+                    log(`❓ Հարց (${senderName}). ${data.lastQuestion.text}`);
+                    document.getElementById('incoming-question').innerText = `❓ ${senderName}. «${data.lastQuestion.text}»`;
                 }
             }
 
             if (data.lastAnswer && data.lastAnswer.timestamp > lastAnswerTimestamp) {
                 lastAnswerTimestamp = data.lastAnswer.timestamp;
                 if (data.lastAnswer.sender !== myRole) {
-                    log("💬 Պատասխան. **" + data.lastAnswer.text + "**");
+                    const responderName = getTeamLabel(data.lastAnswer.sender);
+                    log(`💬 Պատասխան (${responderName}). **${data.lastAnswer.text}**`);
                 }
             }
 
@@ -809,7 +1486,7 @@
         populateQuickQuestions(selectedCategory);
     }
 
-    function resetClientState(catKey) {
+    function resetClientState(catKey, roundNum) {
         gameOver = false;
         mySecret = null;
         oneCardLeftLogged = false;
@@ -819,6 +1496,7 @@
         document.getElementById('my-card-header').classList.add('hidden');
         document.getElementById('controls').classList.add('hidden');
         document.getElementById('restart-box').classList.add('hidden');
+        document.getElementById('series-summary-box').classList.add('hidden');
         document.getElementById('incoming-question').innerText = "(Դեռ հարց չկա)";
 
         selectedCategory = categories[catKey] ? catKey : 'figures_ancient_medieval';
@@ -826,11 +1504,20 @@
         populateQuickQuestions(selectedCategory);
 
         document.getElementById('status-text').innerText = "Ընտրիր քո գաղտնի քարտը ցուցակից...";
-        log(`🔄 --- ՍԿՍՎԵՑ ՆՈՐ ԽԱՂ --- (Թեմա՝ ${categoryNames[selectedCategory] || selectedCategory})`);
+        log(`🔄 --- ՍԿՍՎԵՑ ՓՈՒԼ ${roundNum} / 6 --- (Թեմա՝ ${categoryNames[selectedCategory] || selectedCategory})`);
     }
 
-    function restartGame() {
+    function startNextRound() {
         const newCat = document.getElementById('restart-category-select').value;
+        if (!newCat) return alert("Ընտրեք հաջորդ բնագավառը:");
+
+        const played = (latestRoomData && Array.isArray(latestRoomData.playedCategories))
+            ? latestRoomData.playedCategories
+            : [];
+        const nextRoundNum = played.length + 1;
+        // Alternate starting team each round for fairness
+        const nextFirstAsker = (nextRoundNum % 2 === 1) ? 'host' : 'peer';
+
         roomRef.update({
             category: newCat,
             winner: null,
@@ -838,17 +1525,44 @@
             lastQuestion: null,
             lastAnswer: null,
             secretCards: null,
+            eliminated: null,
+            pendingWinner: null,
+            roundNumber: nextRoundNum,
+            currentTurn: nextFirstAsker,
+            firstAsker: nextFirstAsker,
+            turnStage: 'asking',
+            status: 'connected',
+            restartKey: Date.now()
+        });
+    }
+
+    function resetFullSeries() {
+        if (!confirm("Ցանկանո՞ւմ եք զրոյացնել հաշիվը և սկսել նոր 6-փուլանոց դիմակայություն:")) return;
+        roomRef.update({
+            category: categoryOrder[0],
+            scores: { host: 0, peer: 0 },
+            playedCategories: [],
+            roundNumber: 1,
+            seriesComplete: false,
+            winner: null,
+            winReason: null,
+            lastQuestion: null,
+            lastAnswer: null,
+            secretCards: null,
+            eliminated: null,
             pendingWinner: null,
             currentTurn: 'host',
             firstAsker: 'host',
             turnStage: 'asking',
-            status: 'connected', 
+            status: 'connected',
             restartKey: Date.now()
         });
     }
 
     function updateTurnUI(currentTurn, turnStage) {
         if (!mySecret || gameOver) return;
+        const opponentRole = myRole === 'host' ? 'peer' : 'host';
+        const opponentName = getTeamLabel(opponentRole);
 
         if (turnStage === 'final_guess') {
             if (currentTurn === myRole) {
@@ -856,11 +1570,11 @@
                 document.getElementById('guess-select').disabled = false;
                 document.getElementById('guess-btn').disabled = false;
                 enableAnswering(false);
-                document.getElementById('status-text').innerText = "🚨 ՎԵՐՋԻՆ ՀՆԱՐԱՎՈՒԹՅՈՒՆ․ Խաղացող 1-ը ճիշտ գուշակեց։ Գուշակիր քարտը՝ ոչ-ոքիի հասնելու համար:";
+                document.getElementById('status-text').innerText = `🚨 ՎԵՐՋԻՆ ՀՆԱՐԱՎՈՒԹՅՈՒՆ․ «${opponentName}»-ը ճիշտ գուշակեց։ Գուշակիր քարտը՝ ոչ-ոքիի հասնելու համար:`;
             } else {
                 enableAsking(false);
                 enableAnswering(false);
-                document.getElementById('status-text').innerText = "⏳ Դուք ճիշտ գուշակեցիք։ Սպասում ենք մրցակցի վերջին փորձին...";
+                document.getElementById('status-text').innerText = `⏳ Դուք ճիշտ գուշակեցիք։ Սպասում ենք «${opponentName}»-ի վերջին փորձին...`;
             }
             return;
         }
@@ -869,23 +1583,30 @@
             if (turnStage === 'asking') {
                 enableAsking(true);
                 enableAnswering(false);
-                document.getElementById('status-text').innerText = "🎯 ՔՈ ՀԵՐԹՆ Է․ Տուր հարցդ կամ գուշակիր քարտը:";
+                document.getElementById('status-text').innerText = "🎯 ՁԵՐ ՀԵՐԹՆ Է․ Տվեք հարցը կամ գուշակեք քարտը:";
             } else if (turnStage === 'answering') {
                 enableAsking(false);
                 enableAnswering(false);
-                document.getElementById('status-text').innerText = "⏳ Սպասում ենք հակառակորդի պատասխանին...";
+                document.getElementById('status-text').innerText = `⏳ Սպասում ենք «${opponentName}»-ի պատասխանին...`;
             }
         } else {
             if (turnStage === 'asking') {
                 enableAsking(false);
                 enableAnswering(false);
-                document.getElementById('status-text').innerText = "⏳ Սպասիր, մինչև հակառակորդը հարց տա...";
+                document.getElementById('status-text').innerText = `⏳ Սպասեք, մինչև «${opponentName}»-ը հարց տա...`;
             } else if (turnStage === 'answering') {
                 enableAsking(false);
                 enableAnswering(true);
-                document.getElementById('status-text').innerText = "👉 Պատասխանիր ստացված հարցին (ԱՅՈ կամ ՈՉ):";
+                document.getElementById('status-text').innerText = "👉 Պատասխանեք ստացված հարցին (ԱՅՈ կամ ՈՉ):";
             }
         }
+    }
+
+    function syncMyEliminationsToFirebase() {
+        if (!roomRef || !myRole || myRole === 'spectator') return;
+        const eliminatedIds = Array.from(document.querySelectorAll('#board .card.eliminated'))
+            .map(el => Number(el.dataset.cardId));
+        roomRef.child('eliminated/' + myRole).set(eliminatedIds);
     }
 
     function renderBoard(catKey) {
@@ -905,6 +1626,7 @@
 
             const div = document.createElement('div');
             div.className = 'card';
+            div.dataset.cardId = card.id;
             div.onclick = () => {
                 if (!mySecret) {
                     mySecret = card;
@@ -917,6 +1639,7 @@
                     document.getElementById('controls').classList.remove('hidden');
 
                     roomRef.child('secretCards/' + myRole).set(card.name);
+                    syncMyEliminationsToFirebase();
 
                     roomRef.once('value', snapshot => {
                         const d = snapshot.val();
@@ -925,6 +1648,7 @@
                 } else {
                     div.classList.toggle('eliminated');
                     updateActiveCardsList();
+                    syncMyEliminationsToFirebase();
                 }
             };
 
@@ -957,7 +1681,7 @@
 
     function updateActiveCardsList() {
         const guessSelect = document.getElementById('guess-select');
-        const activeCards = Array.from(document.querySelectorAll('.card:not(.eliminated)'));
+        const activeCards = Array.from(document.querySelectorAll('#board .card:not(.eliminated)'));
         const currentSelected = guessSelect.value;
 
         guessSelect.innerHTML = '<option value="">-- Ընտրիր քարտը --</option>';
@@ -1011,11 +1735,46 @@
 
         roomRef.update({
             lastQuestion: { text: txt, sender: myRole, timestamp: ts },
+            lastAnswer: null,
             turnStage: 'answering'
         }).then(() => {
-            log("📤 Դու հարցրեցիր. " + txt);
+            log("📤 Դուք հարցրիք. " + txt);
             inp.value = '';
             document.getElementById('quick-questions').value = '';
+        });
+    }
+
+    function finalizeRoundResult(data, winnerRole, winReasonText) {
+        const currentScores = data.scores || { host: 0, peer: 0 };
+        const newScores = {
+            host: currentScores.host || 0,
+            peer: currentScores.peer || 0
+        };
+
+        if (winnerRole === 'draw') {
+            newScores.host += 1;
+            newScores.peer += 1;
+        } else if (winnerRole === 'host') {
+            newScores.host += 2;
+        } else if (winnerRole === 'peer') {
+            newScores.peer += 2;
+        }
+
+        const played = Array.isArray(data.playedCategories) ? [...data.playedCategories] : [];
+        const activeCat = data.category || selectedCategory;
+        if (!played.includes(activeCat)) {
+            played.push(activeCat);
+        }
+
+        const isSeriesDone = played.length >= categoryOrder.length;
+
+        roomRef.update({
+            winner: winnerRole,
+            winReason: winReasonText,
+            scores: newScores,
+            playedCategories: played,
+            seriesComplete: isSeriesDone,
+            status: 'ended'
         });
     }
 
@@ -1023,12 +1782,16 @@
         const guessVal = document.getElementById('guess-select').value;
         if (!guessVal) return alert("Խնդրում ենք ընտրել քարտը ցուցակից!");
 
-        if (!confirm(`Վստա՞հ ես, որ մրցակցի մտապահած քարտը "${guessVal}"-ն է:`)) return;
+        if (!confirm(`Վստա՞հ եք, որ մրցակցի մտապահած քարտը «${guessVal}»-ն է:`)) return;
 
         roomRef.once('value', snapshot => {
             const data = snapshot.val();
+            if (!data || data.winner) return;
+
             const opponentRole = (myRole === 'host') ? 'peer' : 'host';
             const opponentSecret = data.secretCards ? data.secretCards[opponentRole] : null;
+            const myTeamName = getTeamLabel(myRole, data.teamNames);
+            const opponentTeamName = getTeamLabel(opponentRole, data.teamNames);
 
             if (!opponentSecret) {
                 alert("Մրցակիցը դեռ չի ընտրել իր քարտը!");
@@ -1040,45 +1803,40 @@
 
             if (data.turnStage === 'final_guess') {
                 if (isCorrect) {
-                    roomRef.update({
-                        winner: 'draw',
-                        winReason: 'Երկու խաղացողներն էլ ճիշտ գուշակեցին (ՈՉ-ՈՔԻ)!',
-                        status: 'ended'
-                    });
+                    finalizeRoundResult(data, 'draw', 'Երկու թիմերն էլ ճիշտ գուշակեցին (ՈՉ-ՈՔԻ)!');
                 } else {
-                    roomRef.update({
-                        winner: data.pendingWinner,
-                        winReason: `Խաղացող 1-ը ճիշտ էր գուշակել, իսկ Խաղացող 2-ը սխալվեց վերջին փորձի ժամանակ (${guessVal}):`,
-                        status: 'ended'
-                    });
+                    const firstTeamName = getTeamLabel(data.pendingWinner, data.teamNames);
+                    finalizeRoundResult(
+                        data,
+                        data.pendingWinner,
+                        `«${firstTeamName}»-ը ճիշտ էր գուշակել, իսկ «${myTeamName}»-ը սխալվեց վերջին փորձի ժամանակ (${guessVal}):`
+                    );
                 }
                 return;
             }
 
             if (isCorrect) {
                 if (myRole === firstAsker) {
-                    alert("👏 Ճիշտ գուշակեցիր: Քանի որ դու առաջինն էիր սկսել, մրցակիցն ունի 1 վերջնական հնարավորություն:");
+                    alert(`👏 Ճիշտ գուշակեցիք: Քանի որ դուք առաջինն էիք սկսել, «${opponentTeamName}»-ն ունի 1 վերջնական հնարավորություն:`);
                     roomRef.update({
                         pendingWinner: myRole,
                         currentTurn: opponentRole,
                         turnStage: 'final_guess',
+                        lastAnswer: null,
                         lastQuestion: { 
-                            text: `🚨 [Խաղացող 1-ը ճիշտ գուշակեց: Ունեք 1 ՎԵՐՋԻՆ ՀՆԱՐԱՎՈՒԹՅՈՒՆ ոչ-ոքիի համար]`, 
+                            text: `🚨 [«${myTeamName}»-ը ճիշտ գուշակեց: «${opponentTeamName}»-ն ունի 1 ՎԵՐՋԻՆ ՀՆԱՐԱՎՈՒԹՅՈՒՆ ոչ-ոքիի համար]`, 
                             sender: myRole, 
                             timestamp: Date.now() 
                         }
                     });
                 } else {
-                    roomRef.update({
-                        winner: myRole,
-                        winReason: `Ճիշտ գուշակեց քարտը (${guessVal})!`,
-                        status: 'ended'
-                    });
+                    finalizeRoundResult(data, myRole, `Ճիշտ գուշակեց քարտը (${guessVal})!`);
                 }
             } else {
-                alert(`❌ Սխալ պատասխան (${guessVal})։ Հերթն անցնում է մրցակցին։`);
+                alert(`❌ Սխալ պատասխան (${guessVal})։ Հերթն անցնում է «${opponentTeamName}»-ին։`);
                 roomRef.update({
-                    lastQuestion: { text: `🎯 [Սխալ գուշակման փորձ: "${guessVal}"]`, sender: myRole, timestamp: Date.now() },
+                    lastQuestion: { text: `🎯 [Սխալ գուշակման փորձ՝ «${guessVal}»]`, sender: myRole, timestamp: Date.now() },
+                    lastAnswer: null,
                     currentTurn: opponentRole,
                     turnStage: 'asking'
                 });
@@ -1091,6 +1849,7 @@
         lastAnswerTimestamp = ts;
 
         enableAnswering(false);
+        document.getElementById('incoming-question').innerText = "(Պատասխանն ուղարկված է)";
 
         const nextTurn = myRole; 
 
@@ -1099,7 +1858,7 @@
             currentTurn: nextTurn,
             turnStage: 'asking'
         }).then(() => {
-            log("📤 Քո պատասխանը. **" + ans + "**");
+            log("📤 Ձեր պատասխանը. **" + ans + "**");
         });
     }
 
