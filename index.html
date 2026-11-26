@@ -372,12 +372,56 @@
             color: #2ecc71;
         }
 
+        .secret-lock-badge.revealed {
+            border-color: #f1c40f;
+            background: rgba(241, 196, 15, 0.16);
+            color: #f1c40f;
+        }
+
         .remaining-badge {
             background: #2980b9;
             color: white;
             padding: 4px 10px;
             border-radius: 20px;
             font-weight: bold;
+        }
+
+        /* END-OF-ROUND SECRET CARD REVEAL BOX ON BIG SCREEN */
+        .spec-reveal-box {
+            background: linear-gradient(135deg, #243b55 0%, #2c3e50 100%);
+            border: 2px solid #f1c40f;
+            border-radius: 12px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            box-shadow: 0 4px 16px rgba(241, 196, 15, 0.25);
+            animation: revealPop 0.35s ease-out;
+        }
+
+        @keyframes revealPop {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .spec-reveal-img-wrap {
+            width: 68px;
+            height: 68px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #f1c40f;
+            background: #fff;
+            flex-shrink: 0;
+        }
+
+        .spec-reveal-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
         }
 
         .spectator-board {
@@ -395,6 +439,20 @@
         .spectator-board .card-title {
             font-size: 0.72rem;
             margin-top: 4px;
+        }
+
+        /* Highlight the team's chosen secret card on the board when round ends */
+        .spectator-board .card.secret-revealed {
+            opacity: 1 !important;
+            filter: none !important;
+            transform: scale(1.05);
+        }
+        .spectator-board .card.secret-revealed .card-img-wrap {
+            border: 3px solid #f1c40f;
+            box-shadow: 0 0 14px rgba(241, 196, 15, 0.85);
+        }
+        .spectator-board .card.secret-revealed .card-title {
+            color: #f1c40f;
         }
 
         .controls { background: #1a2a3a; padding: 14px; border-radius: 12px; margin-top: 14px; border: 2px solid #34495e; }
@@ -483,11 +541,11 @@
             <b style="color: #f1c40f;">Ինչպե՞ս խաղալ.</b>
             <ul>
                 <li><b>Սենյակի ստեղծում.</b> Թիմ 1-ն ընտրում է առաջին թեման, մուտքագրում թիմի անունը և ստեղծում սենյակ՝ ստանալով 4-նիշ ID, որով միանում է Թիմ 2-ը։</li>
-                <li><b>Գաղտնի քարտ.</b> Յուրաքանչյուր թիմ տախտակից սեղմում է իր մտապահած կերպարի վրա (մրցակիցը և մեծ էկրանը չեն տեսնում այն)։</li>
+                <li><b>Գաղտնի քարտ.</b> Յուրաքանչյուր թիմ տախտակից սեղմում է իր մտապահած կերպարի վրա (մրցակիցը և մեծ էկրանը չեն տեսնում այն մինչև փուլի ավարտը)։</li>
                 <li><b>Հարց ու պատասխան.</b> Հերթով տվեք հարցեր, որոնց կարելի է պատասխանել միայն <b>«ԱՅՈ»</b> կամ <b>«ՈՉ»</b>։</li>
                 <li><b>Քարտերի բացառում.</b> Պատասխանների հիման վրա սեղմեք անհամապատասխան քարտերի վրա՝ դրանք խամրեցնելու և խաղից դուրս թողնելու համար։</li>
                 <li><b>Միավորների հաշվարկ (6 բնագավառ).</b> Թիմերը նույն սենյակում հերթով խաղում են <b>բոլոր 6 բնագավառները</b>։ Ամեն փուլում հաղթողը ստանում է <b>2 միավոր</b>, պարտվողը՝ <b>0 միավոր</b>, իսկ ոչ-ոքիի դեպքում՝ <b>1-ական միավոր</b>։ Բոլոր 6 փուլերից հետո ամփոփվում է դիմակայության վերջնական հաղթողը։</li>
-                <li><b>Մեծ էկրան (ըստ ցանկության).</b> Հանդիսատեսի կամ սմարթ-գրատախտակի համար կարելի է գաղտնի կոդով միանալ՝ առանց գաղտնի քարտերը բացահայտելու տեսնելու երկու թիմերի դաշտերը և ընթացիկ հաշիվը։</li>
+                <li><b>Մեծ էկրան (ըստ ցանկության).</b> Հանդիսատեսի կամ սմարթ-գրատախտակի համար կարելի է գաղտնի կոդով միանալ՝ առանց գաղտնի քարտերը բացահայտելու տեսնելու երկու թիմերի դաշտերը և ընթացիկ հաշիվը, իսկ փուլի ավարտին տեսնելու թիմերի մտապահած կերպարները։</li>
             </ul>
         </div>
 
@@ -678,6 +736,16 @@
                             <span id="spec-count-host" class="remaining-badge">Մնացել է՝ 21 / 21</span>
                         </div>
                     </div>
+                    <!-- REVEALED SECRET CARD (SHOWN AT ROUND END) -->
+                    <div id="spec-reveal-host" class="spec-reveal-box hidden">
+                        <div class="spec-reveal-img-wrap">
+                            <img id="spec-reveal-img-host" src="" alt="Թիմ 1-ի գաղտնի քարտը">
+                        </div>
+                        <div style="text-align: left;">
+                            <div style="font-size: 0.78rem; color: #bdc3c7; text-transform: uppercase;">🎭 Մտապահած գաղտնի քարտը.</div>
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #f1c40f;" id="spec-reveal-name-host">-</div>
+                        </div>
+                    </div>
                     <div class="spectator-board" id="spec-board-host"></div>
                 </div>
 
@@ -688,6 +756,16 @@
                         <div class="team-meta">
                             <span id="spec-secret-peer" class="secret-lock-badge">⏳ Ընտրում է...</span>
                             <span id="spec-count-peer" class="remaining-badge">Մնացել է՝ 21 / 21</span>
+                        </div>
+                    </div>
+                    <!-- REVEALED SECRET CARD (SHOWN AT ROUND END) -->
+                    <div id="spec-reveal-peer" class="spec-reveal-box hidden">
+                        <div class="spec-reveal-img-wrap">
+                            <img id="spec-reveal-img-peer" src="" alt="Թիմ 2-ի գաղտնի քարտը">
+                        </div>
+                        <div style="text-align: left;">
+                            <div style="font-size: 0.78rem; color: #bdc3c7; text-transform: uppercase;">🎭 Մտապահած գաղտնի քարտը.</div>
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #f1c40f;" id="spec-reveal-name-peer">-</div>
                         </div>
                     </div>
                     <div class="spectator-board" id="spec-board-peer"></div>
@@ -1181,6 +1259,62 @@
         });
     }
 
+    function updateSpectatorSecretReveal(roleKey, catKey, secretName, isRoundOver) {
+        const secretBadge = document.getElementById('spec-secret-' + roleKey);
+        const revealBox = document.getElementById('spec-reveal-' + roleKey);
+        const revealImg = document.getElementById('spec-reveal-img-' + roleKey);
+        const revealNameEl = document.getElementById('spec-reveal-name-' + roleKey);
+        const boardEl = document.getElementById('spec-board-' + roleKey);
+
+        // Clear previous board highlight
+        boardEl.querySelectorAll('.card').forEach(c => c.classList.remove('secret-revealed'));
+
+        if (isRoundOver && secretName) {
+            secretBadge.innerText = `🎭 ${secretName}`;
+            secretBadge.classList.remove('ready');
+            secretBadge.classList.add('revealed');
+
+            const cardObj = (categories[catKey] || []).find(c => c.name === secretName);
+            let defaultZoomStyle = "";
+            if (catKey === 'figures_ancient_medieval') {
+                defaultZoomStyle = "transform: scale(1.35); transform-origin: center 12%;";
+            } else if (catKey === 'mythology') {
+                defaultZoomStyle = "transform: scale(1.42); transform-origin: center 12%;";
+            }
+
+            if (cardObj) {
+                const fallback = cardObj.fallbackImg || createSvgImg('🎭', '#34495e');
+                const appliedStyle = cardObj.imgStyle || defaultZoomStyle;
+                revealImg.src = cardObj.img;
+                revealImg.style.cssText = appliedStyle;
+                revealImg.onerror = function() { this.onerror = null; this.style.cssText = ''; this.src = fallback; };
+                if (cardObj.wikiUrl) {
+                    loadWikiImage(cardObj, revealImg);
+                }
+            } else {
+                revealImg.style.cssText = '';
+                revealImg.src = createSvgImg('🎭', '#34495e');
+            }
+
+            revealNameEl.innerText = secretName;
+            revealBox.classList.remove('hidden');
+
+            // Highlight matching card on that team's board
+            boardEl.querySelectorAll('.card').forEach(c => {
+                const titleEl = c.querySelector('.card-title');
+                if (titleEl && titleEl.innerText === secretName) {
+                    c.classList.add('secret-revealed');
+                }
+            });
+        } else {
+            revealBox.classList.add('hidden');
+            secretBadge.classList.remove('revealed');
+            const hasSecret = Boolean(secretName);
+            secretBadge.innerText = hasSecret ? "🔒 Գաղտնի քարտը ընտրված է" : "⏳ Ընտրում է քարտը...";
+            secretBadge.classList.toggle('ready', hasSecret);
+        }
+    }
+
     function startSpectatorSession() {
         roomRef.off();
         roomRef.on('value', snapshot => {
@@ -1203,24 +1337,22 @@
                 renderSpectatorBoard('peer', catKey);
             }
 
-            // Secret card status (ALWAYS HIDDEN IDENTITY)
-            const hasHostSecret = Boolean(data.secretCards && data.secretCards.host);
-            const hasPeerSecret = Boolean(data.secretCards && data.secretCards.peer);
-
-            const hostSecretBadge = document.getElementById('spec-secret-host');
-            hostSecretBadge.innerText = hasHostSecret ? "🔒 Գաղտնի քարտը ընտրված է" : "⏳ Ընտրում է քարտը...";
-            hostSecretBadge.classList.toggle('ready', hasHostSecret);
-
-            const peerSecretBadge = document.getElementById('spec-secret-peer');
-            peerSecretBadge.innerText = hasPeerSecret ? "🔒 Գաղտնի քարտը ընտրված է" : "⏳ Ընտրում է քարտը...";
-            peerSecretBadge.classList.toggle('ready', hasPeerSecret);
-
             // Sync eliminated cards for both teams
             const hostEliminated = (data.eliminated && data.eliminated.host) ? data.eliminated.host : [];
             const peerEliminated = (data.eliminated && data.eliminated.peer) ? data.eliminated.peer : [];
 
             syncSpectatorEliminations('host', hostEliminated, categories[catKey].length);
             syncSpectatorEliminations('peer', peerEliminated, categories[catKey].length);
+
+            // Secret card status: hidden during play, REVEALED when round ends (data.winner)
+            const hostSecretName = (data.secretCards && data.secretCards.host) ? data.secretCards.host : null;
+            const peerSecretName = (data.secretCards && data.secretCards.peer) ? data.secretCards.peer : null;
+            const hasHostSecret = Boolean(hostSecretName);
+            const hasPeerSecret = Boolean(peerSecretName);
+            const isRoundOver = Boolean(data.winner);
+
+            updateSpectatorSecretReveal('host', catKey, hostSecretName, isRoundOver);
+            updateSpectatorSecretReveal('peer', catKey, peerSecretName, isRoundOver);
 
             // Latest question & answer (ONLY show answer if it belongs to the current question)
             const qEl = document.getElementById('spec-last-question');
@@ -1384,6 +1516,8 @@
         document.getElementById('controls').classList.add('hidden');
         document.getElementById('restart-box').classList.add('hidden');
         document.getElementById('series-summary-box').classList.add('hidden');
+        document.getElementById('spec-reveal-host').classList.add('hidden');
+        document.getElementById('spec-reveal-peer').classList.add('hidden');
         document.getElementById('incoming-question').innerText = "(Դեռ հարց չկա)";
         document.getElementById('chat').innerHTML = "";
         document.getElementById('join-room-code').value = "";
@@ -1570,7 +1704,7 @@
                 document.getElementById('guess-select').disabled = false;
                 document.getElementById('guess-btn').disabled = false;
                 enableAnswering(false);
-                document.getElementById('status-text').innerText = `🚨 ՎԵՐՋԻՆ ՀՆԱՐԱՎՈՒԹՅՈՒՆ․ «${opponentName}»-ը ճիշտ գուշակեց։ Գուշակիր քարտը՝ ոչ-ոքիի հասնելու համար:`;
+                document.getElementById('status-text').innerText = `🚨 ՎԵՐՋԻՆ ՀՆԱՐԱՎՈՐՈՒԹՅՈՒՆ․ «${opponentName}»-ը ճիշտ գուշակեց։ Գուշակիր քարտը՝ ոչ-ոքիի հասնելու համար:`;
             } else {
                 enableAsking(false);
                 enableAnswering(false);
